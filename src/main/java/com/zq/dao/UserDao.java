@@ -1,6 +1,7 @@
 package com.zq.dao;
 
 import com.zq.bean.User;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Author: YourName
@@ -11,4 +12,5 @@ import com.zq.bean.User;
 public interface UserDao {
     User insertUser(User user);
     User selectUser(String name);
+    User login(@Param("name") String userName, @Param("password") String passWord);
 }

@@ -7,8 +7,7 @@ package zq.test;/**
 
 import com.zq.bean.User;
 import com.zq.dao.UserDao;
-import com.zq.util.SqlSessionGeter;
-import org.apache.ibatis.session.SqlSession;
+import com.zq.utils.SqlSessionUti;
 import org.junit.Test;
 
 /**
@@ -18,16 +17,17 @@ import org.junit.Test;
 public class TestDao {
     @Test
     public void testInsertStudent(){
-        SqlSession sqlSession = SqlSessionGeter.getSqlSession();
+        org.apache.ibatis.session.SqlSession sqlSession = SqlSessionUti.getSqlSession();
         UserDao mapper = sqlSession.getMapper(UserDao.class);
 
         /*User zhansan = new User();
         zhansan.setName("张三");
         zhansan.setPassword("123");
         mapper.insertUser(zhansan);*/
-
-        User user = mapper.selectUser("张三");
-        System.out.println(user);
+        User useryang = mapper.login("gouchuang", "123");
+        System.out.println(useryang);
+       /* User user = mapper.selectUser("张三");
+        System.out.println(user);*/
     }
 
 

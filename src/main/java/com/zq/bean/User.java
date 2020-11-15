@@ -13,6 +13,16 @@ public class User {
     private String name;
     private String password;
 
+    private String lockState;
+
+    public String getLockState() {
+        return lockState;
+    }
+
+    public void setLockState(String lockState) {
+        this.lockState = lockState;
+    }
+
     public String getName() {
         return name;
     }

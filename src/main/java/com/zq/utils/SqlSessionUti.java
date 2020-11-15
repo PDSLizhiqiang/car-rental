@@ -1,4 +1,4 @@
-package com.zq.util;/**
+package com.zq.utils;/**
  * @Author: YourName
  * @Date: Created in 2020/11/7 19:34
  * @Description: TODO
@@ -18,7 +18,7 @@ import java.io.InputStream;
  *@author LZQ
  *@date 2020/11/7 19:34
  */
-public class SqlSessionGeter {
+public class SqlSessionUti {
     private static SqlSessionFactory factory = null;
     static String config = "mybatis-config.xml";
     static InputStream in;
@@ -32,7 +32,7 @@ public class SqlSessionGeter {
     }
 
 
-    public static SqlSession getSqlSession(){
+    public static org.apache.ibatis.session.SqlSession getSqlSession(){
         if(factory != null){
             return factory.openSession(true);
         }

@@ -66,6 +66,7 @@
             var para = "?username="+loginName+"&password="+loginPwd;
             xmlHttp.open("get","user/login.do"+para,true);
             xmlHttp.send();
+            alert("send后")
 
         }
 
