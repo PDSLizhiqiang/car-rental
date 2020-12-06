@@ -1,9 +1,0 @@
-com\zq\bean\User.class
-com\zq\bean\Bicycle.class
-com\zq\dao\BicycleDao.class
-com\zq\service\imp\UserServiceImp.class
-com\zq\service\UserService.class
-com\zq\controller\GetAllBicycles.class
-com\zq\controller\LoginController.class
-com\zq\utils\SqlSessionUti.class
-com\zq\dao\UserDao.class

@@ -16,20 +16,6 @@
     </script>
 </head>
 <body>
-<c:forEach items="${allBooksList}" var="book"  varStatus="i" >
-    <form method="post" action="${pageContext.request.contextPath}/AddBookController?name=${book.name}&price=${book.price}&path=${book.path}">
-        <div class="book_ico" style="float:left;margin: 20px">
-                <%--        ${file.getName()}--%>
-            <img src="${pageContext.request.contextPath}/images_books/${book.path}" width="200px" height="200px"/><br>
-            书名:${book.name}<br>
-            价格:${book.price}<br>
-            库存:${book.kucun}<br>
-            <c:if test="${Session_role == '普通用户'}">
-                <input type="submit" value="加入购物车" />
-            </c:if>
-        </div>
 
-    </form>
-</c:forEach>
 </body>
 </html>

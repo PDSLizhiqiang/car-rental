@@ -5,6 +5,6 @@
 
 <mapper namespace="com.zq.dao.BicycleDao">
     <select id="selectBicycles"  resultType="com.zq.bean.Bicycle">
-        select * from bicycles where status != '0';
+        select * from goods;
     </select>
 </mapper>

@@ -9,10 +9,11 @@
 
 <html>
 <head>
-    <title>欢迎登录</title>
+    <title>欢迎</title>
     <style>
         .div1{
-            background: url(images/1.jpg);
+           /* background: url(images/back.jpg) no-repeat;
+            background-size: 100%;*/
             height: 100%;
             width: 100%;
 

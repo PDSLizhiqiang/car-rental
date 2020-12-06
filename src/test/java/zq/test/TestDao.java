@@ -9,11 +9,13 @@ import com.zq.bean.Bicycle;
 import com.zq.bean.User;
 import com.zq.dao.BicycleDao;
 import com.zq.dao.UserDao;
+import com.zq.service.imp.BicyclesImp;
 import com.zq.utils.SqlSessionUti;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *@author LZQ
@@ -33,12 +35,9 @@ public class TestDao {
 //        System.out.println(useryang);
        /* User user = mapper.selectUser("张三");
         System.out.println(user);*/
-        BicycleDao mapper1 = sqlSession.getMapper(BicycleDao.class);
-        ArrayList<Bicycle> bicycleArrayList = mapper1.selectBicycles();
-
-        for (Bicycle bicycle : bicycleArrayList){
-            System.out.println(bicycle);
-        }
+        BicyclesImp bicyclesImp = new BicyclesImp();
+        List<Bicycle> allbicycles = bicyclesImp.getAllbicycles();
+        System.out.println(allbicycles);
     }
 
 
