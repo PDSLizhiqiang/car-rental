@@ -23,11 +23,10 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/user/login.do")
-    @ResponseBody
+    @RequestMapping("/user/login")
     public String doUserLogin(String username,
                               String password,
-                              HttpServletResponse response) throws LoginException {
+                              HttpServletRequest request) throws LoginException {
       /*  System.out.println("douserLogin 被访问了");
         System.out.println("ajax访问发送成功了");
         System.out.println(username);
@@ -37,14 +36,20 @@ public class LoginController {
         User user = userService.login(username, password);
         System.out.println(user);
         if(user==null) {
-            return "密码错误";
+            request.getSession().setAttribute("mess","用户名密码错误");
+            return "/login.jsp";
         }
         else {
             if("0".equals(user.getLockState())){
-                return "账户被冻结";
+
+                request.getSession().setAttribute("mess","该账户被冻结");
+                return "/login.jsp";
             }
 //            response
-
+            User user1 = new User();
+            user1.setName(username);
+            user1.setPassword(password);
+            request.getSession().setAttribute("users",user1);
 //            登录成功后还需设置用户信息
             return "/view/home.jsp";
         }
