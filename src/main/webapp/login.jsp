@@ -9,102 +9,72 @@
 
 <html>
 <head>
-    <title>欢迎登录</title>
-    <style type="text/css">
-        body{
-            background: url("./images/login_images/03.jpg");
-             background-repeat:no-repeat;
-            background-size:1500px 720px;
-            background-position-x:50%;
-        }
+    <title>欢迎</title>
+    <style>
+        .div1{
+           /* background: url(images/back.jpg) no-repeat;
+            background-size: 100%;*/
+            height: 100%;
+            width: 100%;
 
+        }
+        .form-login {
+            max-width: 330px;
+            margin: 100px auto 0;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            border: 5px solid #96C2F1;
+
+        }
+        h2{
+            text-align: center;
+            background: #4ecdc4;
+            padding: 25px 20px;
+            font-weight: 300;
+            font-size: 20px;
+        }
+        .form-input{
+            width: 100%;
+            margin: 20px 5px 5px 5px ;
+            height: 30px;
+        }
+        .form-submit{
+            width: 100%;
+            margin: 20px 5px 5px 5px ;
+            height: 30px;
+            background: #4ecdc4;
+
+        }
+        .login-div{
+            padding: 20px;
+        }
     </style>
     <script>
 
-        function myfun() {
-            var loginName = document.getElementById('loginName');
-            var loginPwd = document.getElementById('loginPwd');
-        }
-
-        //登录button绑定的函数，用于再客户端验证用户输入的信息格式是否正确
-        function login() {
-
-
-            // alert("绑定成功")
-
-            var loginName = document.getElementById('loginName').value;
-            var loginPwd = document.getElementById('loginPwd').value;
-
-            // alert(loginPwd+loginName);
-            if(loginPwd=="" || loginName==""){
-                alert("用户信息不能为空");
-                return false;
-            }else {
-                search();
-            }
-
-
-        }
-        function search() {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.onreadystatechange = function () {
-                if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-                    var respText = xmlHttp.responseText;
-                    if(respText=="/view/home.jsp"){
-                        window.location.href = "view/home.jsp";
-                    }
-                    else{
-                        alert(respText);
-
-                    }
-
-                }
-
-            }
-            var loginName = document.getElementById('loginName').value;
-            var loginPwd = document.getElementById('loginPwd').value;
-            var para = "?username="+loginName+"&password="+loginPwd;
-            xmlHttp.open("get","user/login.do"+para,true);
-            xmlHttp.send();
-
-        }
-
-
-
-
-
-
+       function x() {
+           if(mess!=null)
+        alert(mess)
+       }
     </script>
 </head>
-<body  onload="myfun()">
-
-    <div id="top" style="height: 50px; background-color: #3C3C3C; width: 100%;">
-        <div style="position: absolute; top: 5px; left: 0px; font-size: 30px; font-weight: 400; color: white; font-family: 'times new roman'">校园车行&nbsp;<span style="font-size: 12px;">您喜欢的我们都有</span></div>
-    </div>
-
-    <div style="position: absolute; top: 120px; right: 100px;width:450px;height:400px;border:1px solid #D5D5D5">
-        <div style="position: absolute; top: 0px; right: 60px;">
-            <div class="page-header">
-                <h1 style="color:greenyellow;">登录</h1>
-            </div>
-            <form action="workbench/index.jsp" class="form-horizontal" >
-                <div class="form-group form-group-lg">
-                    <div style="width: 350px;">
-                        <input class="form-control" type="text" placeholder="用户名" id="loginName">
-                    </div>
-                    <div style="width: 350px; position: relative;top: 20px;">
-                        <input class="form-control" type="password" placeholder="密码" id="loginPwd">
-                    </div>
-                    <div class="checkbox"  style="position: relative;top: 30px; left: 10px;">
-
-                        <span id="msg" style="color: red"></span>
-
-                    </div>
-
-                    <button type="button" id="submitBtn" onclick="login()" class="btn btn-primary btn-lg btn-block"  style="width: 350px; position: relative;top: 45px;">登录</button>
+<body >
+<div >
+    <div class="div1">
+        <form class="form-login" action="<%= request.getContextPath()%>/user/login">
+            <h2 >登录</h2>
+            <div class="login-div">
+                <input type="text" class="form-input" name="username" placeholder="用户名" >
+                <br>
+                <input type="password" class="form-input" name="password" placeholder="密码">
+                <input type="submit" class="form-submit" value="登录">
+                <hr>
+                <div class="registration" style="text-align: center;">
+                    没有账号?<br/>
+                    <a  href="">注册一个</a>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
+</div>
 </body>
 </html>
