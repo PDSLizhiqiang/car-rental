@@ -1,4 +1,4 @@
-package cn.bean;
+package com.zq.bean;
 
 
 public class Orders {
