@@ -49,7 +49,7 @@ public class LoginController {
             request.getSession().setAttribute("users",user1);
 
             //管理员身份
-            if (user1.getLockState().equals("1")){
+            if (user1.getStatus().equals("admin")){
                 return "/view/home.jsp";
             }else
                 //用户身份

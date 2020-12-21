@@ -16,7 +16,16 @@
         select * from  user where name = #{name} and password = #{password};
     </select>
 
-    <select id="updata" resultType="com.zq.bean.User">
+    <select id="updataPassword" resultType="com.zq.bean.User">
         update  user set  password = #{password} where name =#{name};
     </select>
+
+    <select id="updataStatus" resultType="com.zq.bean.User">
+        update user set status = #{status} where name =#{name};
+    </select>
+
+    <select id="updataLockState" resultType="com.zq.bean.User">
+        update user set lockState = #{lockState} where name =#{name};
+    </select>
+
 </mapper>

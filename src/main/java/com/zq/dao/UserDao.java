@@ -13,5 +13,7 @@ public interface UserDao {
     User insertUser(User user);
     User selectUser(String name);
     User login(@Param("name") String userName, @Param("password") String passWord);
-    User updata(@Param("name") String UserName,@Param("password") String NewPassword);
+    User updataPassword(@Param("name") String UserName,@Param("password") String NewPassword);
+    User updataStatus(@Param("name") String UserName,@Param("status") String NewStatus);
+    User updataLockState(@Param("name") String UserName,@Param("lockState") String NewlockState);
 }

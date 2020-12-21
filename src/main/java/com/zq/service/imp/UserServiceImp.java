@@ -47,15 +47,24 @@ public class UserServiceImp implements UserService {
 
 
     @Override
-    public  User updata(String UserName, String NewPassword){
+    public  User updataPasswd(String UserName, String NewPassword){
         UserDao userDaoSq = SqlSessionUti.getSqlSession().getMapper(UserDao.class);
-        User user0 = userDaoSq.selectUser(UserName);
-        if(user0==null){
+        User user = userDaoSq.updataPassword(UserName,NewPassword);
+        return user;
+    }
 
-            return null;
-        }
-        User user1 = userDaoSq.updata(UserName,NewPassword);
-        return user1;
+    @Override
+    public User updataStatus(String UserName,String Status) {
+        UserDao userDaoSq = SqlSessionUti.getSqlSession().getMapper(UserDao.class);
+        User user = userDaoSq.updataStatus(UserName,Status);
+        return user;
+    }
+
+    @Override
+    public User updataLockState(String UserName, String NewlockState) {
+        UserDao userDaoSq = SqlSessionUti.getSqlSession().getMapper(UserDao.class);
+        User user = userDaoSq.updataLockState(UserName,NewlockState);
+        return user;
     }
 
 
