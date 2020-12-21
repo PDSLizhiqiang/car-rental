@@ -12,7 +12,7 @@ import com.zq.dao.UserDao;
 import com.zq.service.imp.BicyclesImp;
 import com.zq.utils.SqlSessionUti;
 import org.apache.ibatis.session.SqlSession;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;

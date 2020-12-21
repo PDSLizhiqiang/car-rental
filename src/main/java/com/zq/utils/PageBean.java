@@ -1,4 +1,4 @@
-package com.zq.util;
+package com.zq.utils;
 
 import java.io.Serializable;
 

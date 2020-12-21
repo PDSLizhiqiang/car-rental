@@ -12,4 +12,6 @@ import javax.security.auth.login.LoginException;
  */
 public interface UserService {
     User login(String loginAct, String loginPwd) throws LoginException;
+    User find(String name);
+    User updata(String UserName, String NewPassword);
 }

@@ -1,4 +1,4 @@
-package cn.mapper;
+package com.zq.dao;
 
 import java.util.List;
 import java.util.Map;

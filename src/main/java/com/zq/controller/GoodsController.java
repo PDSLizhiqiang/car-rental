@@ -17,6 +17,7 @@ public class GoodsController {
     @RequestMapping("/getgood")
     public String getGoods(){
 
+
         return "/view/dianche.jsp";
     }
 
