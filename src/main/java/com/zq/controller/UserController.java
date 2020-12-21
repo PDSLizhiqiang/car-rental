@@ -13,14 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class UserController {
     //用户更改密码
-    @RequestMapping("/user/update")
-    public String doUpdate(String username,
+    @RequestMapping("/user/UpdatePw")
+    public String doUpdatePw(String username,
                            String Newpassword,
                            String lockState,
                            HttpServletRequest request){
         UserService userService = new UserServiceImp();
         User user =userService.updata(username,Newpassword);
-        System.out.println(user);
+        System.out.println(user+"请重新登录");
 
 //            response
         User user1 = new User();
@@ -28,5 +28,11 @@ public class UserController {
         user1.setPassword(Newpassword);
         request.getSession().setAttribute("users",user1);
         return "/login.jsp";
+    }
+
+    @RequestMapping("/user/UpdataStatus")
+    public String doUpdataStatus(){
+
+        return "";
     }
 }

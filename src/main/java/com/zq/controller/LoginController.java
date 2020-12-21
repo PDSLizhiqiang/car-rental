@@ -28,10 +28,6 @@ public class LoginController {
                               String password,
                               String lockState,
                               HttpServletRequest request) throws LoginException {
-      /*  System.out.println("douserLogin 被访问了");
-        System.out.println("ajax访问发送成功了");
-        System.out.println(username);
-        System.out.println(password);*/
 
         UserService userService = new UserServiceImp();
         User user = userService.login(username, password);
