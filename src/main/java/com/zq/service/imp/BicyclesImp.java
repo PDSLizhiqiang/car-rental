@@ -11,6 +11,7 @@ import com.zq.dao.BicycleDao;
 import com.zq.dao.UserDao;
 import com.zq.service.BicycleService;
 import com.zq.utils.SqlSessionUti;
+import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 
@@ -28,4 +29,13 @@ public class BicyclesImp implements BicycleService {
 
         return  bicyclesList;
     }
+
+    @Override
+    public Bicycle getBicycleById(int id) {
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        Bicycle bicycle = mapper.getBicycleById(id);
+        return bicycle;
+    }
+
 }

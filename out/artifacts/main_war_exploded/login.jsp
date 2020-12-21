@@ -11,16 +11,22 @@
 <head>
     <title>欢迎</title>
     <style>
+
         .div1{
-           /* background: url(images/back.jpg) no-repeat;
-            background-size: 100%;*/
             height: 100%;
             width: 100%;
+            background-color: white;
+            background-image: url("images/back.jpeg");
+            background-repeat: no-repeat;
+            background-size:100%;
+            background-attachment: fixed;
+            position: fixed;
+
 
         }
         .form-login {
             max-width: 330px;
-            margin: 100px auto 0;
+            margin: 175px auto 0;
             -webkit-border-radius: 5px;
             border-radius: 5px;
             border: 5px solid #96C2F1;
@@ -30,6 +36,7 @@
             text-align: center;
             background: #4ecdc4;
             padding: 25px 20px;
+            margin-top: 0px;
             font-weight: 300;
             font-size: 20px;
         }
@@ -49,13 +56,6 @@
             padding: 20px;
         }
     </style>
-    <script>
-
-       function x() {
-           if(mess!=null)
-        alert(mess)
-       }
-    </script>
 </head>
 <body >
 <div >
@@ -68,9 +68,9 @@
                 <input type="password" class="form-input" name="password" placeholder="密码">
                 <input type="submit" class="form-submit" value="登录">
                 <hr>
-                <div class="registration" style="text-align: center;">
+                <div   style="text-align: center;color: #4ecdc4">
                     没有账号?<br/>
-                    <a  href="">注册一个</a>
+                    <a  href="" style="color: #4ecdc4">注册一个</a>
                 </div>
             </div>
         </form>

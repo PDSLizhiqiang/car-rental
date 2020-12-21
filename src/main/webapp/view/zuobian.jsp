@@ -44,18 +44,14 @@
                     <span>首页</span>
                 </a>
             </li>
-            <li class="li">
-                <a href="">
-                    <i class="fa fa-cubes"></i><span>查看商品</span>
-                </a>
-            </li>
+
             <li class="li">
                 <a href="">
                     <i class="fa fa-cart-plus"></i><span>我的购物车</span>
                 </a>
             </li>
             <li class="li">
-                <a href="">
+                <a href="${pageContext.request.contextPath}/view/dingdan.jsp">
                     <i class="fa fa-book"></i><span>我的订单</span>
                 </a>
             </li>

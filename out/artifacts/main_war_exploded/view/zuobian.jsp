@@ -44,11 +44,7 @@
                     <span>首页</span>
                 </a>
             </li>
-            <li class="li">
-                <a href="">
-                    <i class="fa fa-cubes"></i><span>查看商品</span>
-                </a>
-            </li>
+
             <li class="li">
                 <a href="">
                     <i class="fa fa-cart-plus"></i><span>我的购物车</span>
