@@ -5,6 +5,9 @@
 
 <mapper namespace="com.zq.dao.BicycleDao">
     <select id="selectBicycles"  resultType="com.zq.bean.Bicycle">
-        select * from goods;
+        select * from goodLi;
+    </select>
+    <select id="getBicycleById" resultType="com.zq.bean.Bicycle">
+        select * from goodli where id = #{id};
     </select>
 </mapper>

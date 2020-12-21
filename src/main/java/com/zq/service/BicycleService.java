@@ -12,4 +12,5 @@ import java.util.List;
  */
 public interface BicycleService {
     List<Bicycle> getAllbicycles();
+    Bicycle getBicycleById(int id);
 }

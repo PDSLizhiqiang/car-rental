@@ -15,4 +15,6 @@ public interface BicycleDao {
 
     ArrayList<Bicycle> selectBicycles();
 
+    Bicycle getBicycleById(int id);
+
 }

@@ -9,12 +9,15 @@ import com.zq.bean.Bicycle;
 import com.zq.bean.User;
 import com.zq.dao.BicycleDao;
 import com.zq.dao.UserDao;
+import com.zq.service.BicycleService;
 import com.zq.service.imp.BicyclesImp;
 import com.zq.utils.SqlSessionUti;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,5 +43,19 @@ public class TestDao {
         System.out.println(allbicycles);
     }
 
+    @Test
+    public void getBicycleById(){
+
+        BicycleService bicycleService = new BicyclesImp();
+        Bicycle bicycle = bicycleService.getBicycleById(1);
+        System.out.println(bicycle);
+
+    }
+    @Test
+    public void getDate()
+    {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+    }
 
 }

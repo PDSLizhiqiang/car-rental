@@ -58,6 +58,23 @@
             border: none;
             color: #fff;
         }
+        .div_shangping{
+            width: 900px;
+            float: right;
+        }
+        .div_liutittle{
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            width: 500px;
+            height: 100px;
+            background-color:#4ecdc4;
+        }
+        .div_liuwai{
+            width: 500px;
+            height: 600px;
+            background-color: #eeeeee;
+        }
     </style>
 </head>
 <%
@@ -85,15 +102,22 @@
             <button type="submit" class="search-fon">搜索</button>
         </form>
     </div>
-    <c:forEach items="${bicycleList}" var="bicycle"  varStatus="i" >
-            <div class="book_ico" style="float:left;margin:20px" onclick="location='${pageContext.request.contextPath}/getgood'">
 
-                <img src="${pageContext.request.contextPath}/images/${bicycle.path}" width="200px" height="200px"/><br>
-                车名:${bicycle.name}<br>
-                价格:${bicycle.price}<br>
-                路径:${bicycle.path}
-            </div>
-    </c:forEach>
+    <div class="div_shangping">
+
+        <c:forEach items="${bicycleList}" var="bicycle"  varStatus="i" >
+                <div class="book_ico" style="float:left;margin:20px" onclick="location='${pageContext.request.contextPath}/getBicycleById?id=${bicycle.id}'">
+
+                    <img src="${pageContext.request.contextPath}/images/${bicycle.path}" width="200px" height="200px"/><br>
+                    产品:${bicycle.name}<br>
+                </div>
+        </c:forEach>
+
+    </div>
+    <div class="div_liuwai">
+
+        <div class="div_liutittle">用户留言</div>
+    </div>
 
 </body>
 
