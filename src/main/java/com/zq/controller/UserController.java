@@ -1,6 +1,5 @@
 package com.zq.controller;
 
-
 import com.zq.bean.User;
 import com.zq.service.UserService;
 import com.zq.service.imp.UserServiceImp;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 //用户管理
 @Controller
 public class UserController {
-    
+
     //用户更改密码
     @RequestMapping("/user/UpdatePasswd")
     public String doUpdatePasswd(String username,
