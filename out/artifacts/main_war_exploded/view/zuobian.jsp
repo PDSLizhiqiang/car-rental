@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li class="li">
-                <a href="">
+                <a href="${pageContext.request.contextPath}/view/dingdan.jsp">
                     <i class="fa fa-book"></i><span>我的订单</span>
                 </a>
             </li>
