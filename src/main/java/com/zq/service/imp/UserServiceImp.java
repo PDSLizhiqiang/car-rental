@@ -11,11 +11,14 @@ import com.zq.service.UserService;
 import com.zq.utils.SqlSessionUti;
 
 import javax.security.auth.login.LoginException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
- *@author LZQ
+ *@author hyn LZQ
  *@date 2020/11/15 18:03
  */
 public class UserServiceImp implements UserService {
@@ -65,6 +68,19 @@ public class UserServiceImp implements UserService {
         UserDao userDaoSq = SqlSessionUti.getSqlSession().getMapper(UserDao.class);
         User user = userDaoSq.updataLockState(UserName,NewlockState);
         return user;
+    }
+
+    @Override
+    public ArrayList<User> showAll() {
+        UserDao userDao = SqlSessionUti.getSqlSession().getMapper(UserDao.class);
+        ArrayList<User> users =userDao.showAll();
+        return users;
+    }
+
+    @Override
+    public void deleteUser(String name) {
+        UserDao userDao = SqlSessionUti.getSqlSession().getMapper(UserDao.class);
+        userDao.deleteUser(name);
     }
 
 

@@ -28,12 +28,12 @@ public class GoodsController {
         Bicycle bicycle= bicycleService.getBicycleById(id);
         model.addAttribute("bicycle",bicycle);
 
-<<<<<<< HEAD
+
 
         return "/view/dianche.jsp";
-=======
-        return "/view/goodsdetails.jsp";
->>>>>>> upstream/main
+
+        //return "/view/goodsdetails.jsp";
+
     }
 
     @RequestMapping("/rentBicycle")
