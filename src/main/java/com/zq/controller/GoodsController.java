@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *@author LZQ
+ *@author LZQ HYN
  *@date 2020/12/6 20:00
  */
 @Controller
@@ -36,7 +38,10 @@ public class GoodsController {
 
         request.getSession().setAttribute("bicycle",bicycle);
 
-        return "/view/goodsdetails.jsp";
+        return "/view/dianche.jsp";
+
+        //return "/view/goodsdetails.jsp";
+
     }
 
     @RequestMapping("/rentBicycle")
@@ -65,4 +70,16 @@ public class GoodsController {
         }
 
     }
+
+    //展示所有商品
+    //将得到的集合放入request中
+    @RequestMapping("/allGoods")
+    public String allGoods(HttpServletRequest request){
+        BicyclesImp bicyclesImp = new BicyclesImp();
+        List<Bicycle> allbicycles= bicyclesImp.getAllbicycles();
+        request.getSession().setAttribute("allbicycles",allbicycles);
+        return "";
+    }
+
+
 }

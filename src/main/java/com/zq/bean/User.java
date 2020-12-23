@@ -12,8 +12,16 @@ package com.zq.bean;/**
 public class User {
     private String name;
     private String password;
-
     private String lockState;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getLockState() {
         return lockState;

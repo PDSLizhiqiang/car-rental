@@ -15,7 +15,7 @@ import com.zq.service.BicycleService;
 import com.zq.service.imp.BicyclesImp;
 import com.zq.utils.SqlSessionUti;
 import org.apache.ibatis.session.SqlSession;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
