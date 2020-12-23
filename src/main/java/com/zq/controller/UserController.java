@@ -3,7 +3,6 @@ package com.zq.controller;
 import com.zq.bean.User;
 import com.zq.service.UserService;
 import com.zq.service.imp.UserServiceImp;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,18 +13,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
-//用户管理
+//管理员的用户管理
+//用户的修改密码
 @Controller
 public class UserController {
 
     //展示所有用户，用于用户管理的展示界面
     //超链接
     @RequestMapping("/user/list")
-    public ModelAndView ShowAllUser( ModelAndView model){
+    public ModelAndView ShowAllUser( ModelAndView model,HttpServletRequest request){
         UserService userService = new UserServiceImp();
         //得到用户集合
-        ArrayList<User> allusers = userService.showAll();
-        model.addObject("AllUsers",allusers);
+        ArrayList<User> allUsers = userService.showAll();
+        model.addObject("AllUsers",allUsers);
+
+        request.getSession().setAttribute("allUsers",allUsers);
         //返回界面
         model.setViewName("");
         return model;
@@ -89,13 +91,12 @@ public class UserController {
     }
 
     //删除用户
-    //按钮
+    //按钮 从request.getSession().getAttribute("username")获取需要删除的User
     @RequestMapping("/user/DeleteUser")
-    public String DeleteUser(String username,Model model){
+    public String DeleteUser(String username,Model model,HttpServletRequest request){
         UserService userService = new UserServiceImp();
-        User auser = userService.find(username);
+        User auser = (User) request.getSession().getAttribute("username");
         model.getAttribute("username");
-
         if (auser!=null){
             userService.deleteUser(username);
             //返回一个成功界面
@@ -108,16 +109,19 @@ public class UserController {
 
     }
     //查找用户
+    //从HttpServletRequest得到要查找的用户名，将数据库查到的用户存入
+    // request.getSession().setAttribute("find",finduser);
     @RequestMapping("/user/FindUser")
-    public String FindUser(String name, Model model, HttpServletRequest request){
+    public String FindUser(String name, HttpServletRequest request){
         UserService userService = new UserServiceImp();
         User finduser= userService.find(name);
-       //找到并返回一个user
-       request.getSession().setAttribute("find",finduser);
+       //找到并存入一个finduser
+       request.getSession().setAttribute("finduser",finduser);
         return "";
     }
 
     //修改账户状况（封，解封）
+    //
     @RequestMapping("/user/UpdataLockState")
     public String doUpdataLockState(String username,
                                  String NewlockState,
