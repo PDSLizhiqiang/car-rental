@@ -28,6 +28,13 @@
     </dependency>
 
     <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.5.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>5.2.5.RELEASE</version>
@@ -51,6 +58,17 @@
       <artifactId>jstl-api</artifactId>
       <version>1.2</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+
+
+
 
     <dependency>
       <groupId>taglibs</groupId>

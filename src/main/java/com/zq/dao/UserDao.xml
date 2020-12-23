@@ -38,6 +38,6 @@
     </delete>
     <!--注册-->
     <insert id="" parameterType="user" keyProperty="name">
-        
+
     </insert>
 </mapper>

@@ -44,12 +44,12 @@ public class LoginController {
             }
 
 //            response
-           /* User user1 = new User();
+            User user1 = new User();
             user1.setName(username);
-<<<<<<< HEAD
-            user1.setPassword(password)*/;
+
+            user1.setPassword(password);
             request.getSession().setAttribute("users",user);
-=======
+
             user1.setPassword(password);
             request.getSession().setAttribute("users",user1);
 
@@ -58,7 +58,7 @@ public class LoginController {
                 return "/view/home.jsp";
             }else
                 //用户身份
->>>>>>> 95e413f7020f132ddfd460e9247ab963afb93fbf
+
 //            登录成功后还需设置用户信息
             return "/view/home.jsp";
         }

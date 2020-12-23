@@ -32,14 +32,9 @@ public class GoodsController {
 
     @RequestMapping("/getBicycleById")
     public String getGoods(int id,HttpServletRequest request, Model model){
-
-
         Bicycle bicycle= bicycleService.getBicycleById(id);
-
         request.getSession().setAttribute("bicycle",bicycle);
-
         return "/view/dianche.jsp";
-
         //return "/view/goodsdetails.jsp";
 
     }
