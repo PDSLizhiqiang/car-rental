@@ -22,4 +22,5 @@ public interface UserService {
     User updataLockState( String UserName,String NewlockState);
     ArrayList<User> showAll();
     void deleteUser(String name);
+    User addUser();
 }

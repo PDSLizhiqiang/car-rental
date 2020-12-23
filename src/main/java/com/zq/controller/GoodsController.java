@@ -30,8 +30,6 @@ public class GoodsController {
         Bicycle bicycle= bicycleService.getBicycleById(id);
         model.addAttribute("bicycle",bicycle);
 
-
-
         return "/view/dianche.jsp";
 
         //return "/view/goodsdetails.jsp";
@@ -47,12 +45,15 @@ public class GoodsController {
         return "/view/home.jsp";
     }
 
+    //展示所有商品
+    //将得到的集合放入request中
     @RequestMapping("/allGoods")
     public String allGoods(HttpServletRequest request){
         BicyclesImp bicyclesImp = new BicyclesImp();
         List<Bicycle> allbicycles= bicyclesImp.getAllbicycles();
         request.getSession().setAttribute("allbicycles",allbicycles);
-
         return "";
     }
+
+
 }

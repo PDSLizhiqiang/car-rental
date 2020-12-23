@@ -25,15 +25,19 @@
         update  user set  password = #{password} where name =#{name};
     </select>
     <!--根据用户名找到用户更改用户身份-->
-    <update id="updataStatus" >
+    <update id="updataStatus" parameterType="user">
         update user set status = #{status} where name =#{name};
     </update>
     <!--根据用户名找到用户更改用户状态-->
-    <update id="updataLockState" >
+    <update id="updataLockState" parameterType="user">
         update user set lockState = #{lockState} where name =#{name};
     </update>
     <!--根据用户名找到用户删除用户-->
     <delete id="deleteUser">
         delete from user where name=#{name};
     </delete>
+    <!--注册-->
+    <insert id="" parameterType="user" keyProperty="name">
+        
+    </insert>
 </mapper>

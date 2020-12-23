@@ -83,5 +83,10 @@ public class UserServiceImp implements UserService {
         userDao.deleteUser(name);
     }
 
+    @Override
+    public User addUser() {
+        return null;
+    }
+
 
 }

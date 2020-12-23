@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 //管理员的用户管理
 //用户的修改密码
+//注册
 @Controller
 public class UserController {
 
@@ -144,6 +145,13 @@ public class UserController {
         }
 
     }
+
+    //用户注册
+    @RequestMapping("/user/addUser")
+    public String addUser(){
+        return "";
+    }
+
 
 
 }
