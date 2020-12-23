@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LZQ
@@ -10,8 +11,16 @@
 <head>
     <title>个人中心</title>
 </head>
-<body>
+<body style="background-color: #eeeeee">
     <%@include file="header.jsp" %>
     <%@include file="zuobian.jsp" %>
+
+        <c:if test="${path=='dingdan'}">
+            <%@include file="dingdan.jsp"%>
+        </c:if>
+
+        <c:if test="${path=='gouwuche'}">
+            <%@include file="gouwuche.jsp"%>
+        </c:if>
 </body>
 </html>

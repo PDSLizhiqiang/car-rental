@@ -12,7 +12,7 @@
     <style>
         .div_header{
             background-color: black;
-            height: 45px;
+            height: 70px;
             width: 100%;
         }
         .toubu{

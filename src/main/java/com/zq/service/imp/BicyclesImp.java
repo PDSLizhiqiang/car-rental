@@ -8,17 +8,23 @@ package com.zq.service.imp;/**
 import com.zq.bean.Bicycle;
 import com.zq.bean.User;
 import com.zq.dao.BicycleDao;
+import com.zq.dao.RentBicycle;
 import com.zq.dao.UserDao;
 import com.zq.service.BicycleService;
+import com.zq.utils.GetNumber;
 import com.zq.utils.SqlSessionUti;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
  *@author LZQ
  *@date 2020/12/6 18:11
  */
+@Service
 public class BicyclesImp implements BicycleService {
 
     @Override
@@ -36,6 +42,26 @@ public class BicyclesImp implements BicycleService {
         BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
         Bicycle bicycle = mapper.getBicycleById(id);
         return bicycle;
+    }
+
+    @Override
+    public void addBicycleIntoCar(String name,String path,String date,double price) {
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        mapper.addBicycleIntoCar(name,path, date,price);
+
+    }
+
+    @Override
+    public void rentBicycle(String username, double price) {
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        RentBicycle mapper = sqlSession.getMapper(RentBicycle.class);
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+
+        String dingdan = GetNumber.genRandomNum();
+        mapper.rentBicycle(dingdan,username, price,df.format(new Date()));
     }
 
 }

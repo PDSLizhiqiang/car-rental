@@ -25,5 +25,7 @@
         <mapper resource="com/zq/dao/UserDao.xml"/>
         <mapper resource="com/zq/dao/BicycleDao.xml"/>
         <mapper resource="com/zq/dao/RentBicycle.xml"/>
+        <mapper resource="com/zq/dao/DingdanDao.xml"/>
+        <mapper resource="com/zq/dao/GoodsCarDao.xml"/>
     </mappers>
 </configuration>

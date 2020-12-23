@@ -10,5 +10,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface RentBicycle {
 
-    void rentBicycle(@Param("username") String username, @Param("price") double price);
+    void rentBicycle(@Param("dingdanhao") String dingdanhao,@Param("username") String username, @Param("price") double price,@Param("date")String date);
 }

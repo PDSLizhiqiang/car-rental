@@ -10,4 +10,8 @@
     <select id="getBicycleById" resultType="com.zq.bean.Bicycle">
         select * from goodli where id = #{id};
     </select>
+
+    <insert id="addBicycleIntoCar">
+        insert into t_bicyclecar (name,path,date,price) values (#{name},#{path},#{date},#{price});
+    </insert>
 </mapper>

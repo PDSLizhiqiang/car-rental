@@ -9,6 +9,7 @@ import com.zq.bean.User;
 import com.zq.dao.UserDao;
 import com.zq.service.UserService;
 import com.zq.utils.SqlSessionUti;
+import org.springframework.stereotype.Service;
 
 import javax.security.auth.login.LoginException;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ import java.util.Map;
  *@author LZQ
  *@date 2020/11/15 18:03
  */
+@Service
 public class UserServiceImp implements UserService {
     @Override
     public User login(String loginName, String loginPwd) throws LoginException {

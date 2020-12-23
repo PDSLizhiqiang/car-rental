@@ -8,6 +8,7 @@ package com.zq.controller;/**
 import com.zq.bean.User;
 import com.zq.service.UserService;
 import com.zq.service.imp.UserServiceImp;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class LoginController {
+    @Autowired
+    private UserServiceImp userService;
 
     @RequestMapping("/user/login")
     public String doUserLogin(String username,
@@ -32,9 +35,7 @@ public class LoginController {
         System.out.println(username);
         System.out.println(password);*/
 
-        UserService userService = new UserServiceImp();
         User user = userService.login(username, password);
-        System.out.println(user);
         if(user==null) {
             request.getSession().setAttribute("mess","用户名密码错误");
             return "/login.jsp";
@@ -46,10 +47,10 @@ public class LoginController {
                 return "/login.jsp";
             }
 //            response
-            User user1 = new User();
+           /* User user1 = new User();
             user1.setName(username);
-            user1.setPassword(password);
-            request.getSession().setAttribute("users",user1);
+            user1.setPassword(password)*/;
+            request.getSession().setAttribute("users",user);
 //            登录成功后还需设置用户信息
             return "/view/home.jsp";
         }

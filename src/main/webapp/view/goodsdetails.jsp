@@ -15,9 +15,8 @@
         }
         .table_main{
             margin-left: 500px;
-            margin-top: 70px;
-            background-color: white;
-
+            background-color:white;
+            position: fixed;
         }
         .td1{
             text-align: left;
@@ -65,7 +64,9 @@
                        <input  class="td1" type="text" value="${users.name}"  name="username" readonly="true"/>
                     </td>
                     <td class="td_button">
-                        <input type="submit" value="租聘"  style="color: #4ecdc4">
+                        <input type="submit" name="submit" value="租用"  style="color: #4ecdc4;width: 60px;height: 60px;font-size: 25px">
+                        <input type="submit" name = "submit" value="加入购物车"  style="color: #4ecdc4;width: 160px;height: 60px;font-size: 20px">
+                        <input type="submit" name = "submit" value="返回"  style="color: #4ecdc4;width: 60px;height: 60px;font-size: 20px">
                     </td>
                 </tr>
             </table>

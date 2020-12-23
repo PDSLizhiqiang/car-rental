@@ -13,4 +13,7 @@ import java.util.List;
 public interface BicycleService {
     List<Bicycle> getAllbicycles();
     Bicycle getBicycleById(int id);
+    void  addBicycleIntoCar(String name,String path,String date,double price);
+
+    void  rentBicycle(String username,double price);
 }

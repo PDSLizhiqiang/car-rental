@@ -13,7 +13,7 @@
         .div-main{
             background-color: black;
             height: 100%;
-            width: 200px;
+            width: 300px;
         }
         .sidebar-menu{
             margin: -2px 0 0;
@@ -21,7 +21,7 @@
         }
         .name{
             color: white;
-            font-weight: 200;
+           font-size: 30px;
             margin-top: 0px;
             padding-top: 15px;
             padding-left: 30px;
@@ -30,15 +30,17 @@
             margin-top: 25px;
             padding-left: 30px;
         }
+        span{
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
-<div  class="div-main">
+<div  class="div-main" style="position: fixed">
     <!-- sidebar menu start-->
     <ul class="sidebar-menu">
         <h5 class="name">欢迎您:${sessionScope.users.name }</h5>
 
-        <c:if test="${sessionScope.role==1 }">
             <li class="li">
                 <a href="">
                     <span>首页</span>
@@ -46,12 +48,12 @@
             </li>
 
             <li class="li">
-                <a href="">
+                <a href="${pageContext.request.contextPath}/lookGoodsCar?username=${users.name}">
                     <i class="fa fa-cart-plus"></i><span>我的购物车</span>
                 </a>
             </li>
             <li class="li">
-                <a href="">
+                <a href="${pageContext.request.contextPath}/addview?username=${users.name}">
                     <i class="fa fa-book"></i><span>我的订单</span>
                 </a>
             </li>
@@ -70,7 +72,6 @@
                     <i class="fa fa-cogs"></i><span>修改密码</span>
                 </a>
             </li>
-        </c:if>
     </ul>
     <!-- sidebar menu end-->
 </div>

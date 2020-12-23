@@ -6,8 +6,10 @@ package zq.test;/**
  */
 
 import com.zq.bean.Bicycle;
+import com.zq.bean.Dingdan;
 import com.zq.bean.User;
 import com.zq.dao.BicycleDao;
+import com.zq.dao.DingdanDao;
 import com.zq.dao.UserDao;
 import com.zq.service.BicycleService;
 import com.zq.service.imp.BicyclesImp;
@@ -56,6 +58,14 @@ public class TestDao {
     {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+    }
+
+    @Test
+    public void getDingdanByusername(){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        DingdanDao mapper = sqlSession.getMapper(DingdanDao.class);
+        List<Dingdan> list = mapper.getAlldingdanByUsername("志强");
+        System.out.println(list);
     }
 
 }
