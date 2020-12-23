@@ -15,9 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *@author LZQ
+ *@author LZQ HYN
  *@date 2020/12/6 20:00
  */
 @Controller
@@ -43,5 +45,14 @@ public class GoodsController {
         RentBicycleImp rentBicycleImp = new RentBicycleImp();
         rentBicycleImp.rentBicycle(username, jiage);
         return "/view/home.jsp";
+    }
+
+    @RequestMapping("/allGoods")
+    public String allGoods(HttpServletRequest request){
+        BicyclesImp bicyclesImp = new BicyclesImp();
+        List<Bicycle> allbicycles= bicyclesImp.getAllbicycles();
+        request.getSession().setAttribute("allbicycles",allbicycles);
+
+        return "";
     }
 }
