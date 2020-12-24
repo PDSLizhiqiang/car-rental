@@ -1,0 +1,55 @@
+package model;
+
+public class User {
+
+	String name;
+	String passwd;
+	int sf;
+	String mail;
+	
+
+	public User(){
+		
+	}
+	
+	public User(String name, String passwd, int sf, String mail) {
+		this.name = name;
+		this.passwd = passwd;
+		this.sf = sf;
+		this.mail = mail;
+	}
+
+	public String getName() {
+		return name;
+		
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPasswd() {
+		return passwd;
+	}
+
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+	}
+
+	public int getSf() {
+		return sf;
+	}
+
+	public void setSf(int sf) {
+		this.sf = sf;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+	
+}
