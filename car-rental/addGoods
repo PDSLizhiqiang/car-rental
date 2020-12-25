@@ -1,0 +1,6 @@
+@RequestMapping("add")
+	public String add(Goods goods,HttpSession session) {
+		goods.setIsdel(0);
+		goodsService.save(goods);
+		return "redirect:/goods/list";
+	}
