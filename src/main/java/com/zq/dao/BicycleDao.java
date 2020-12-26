@@ -30,5 +30,14 @@ public interface BicycleDao {
                         @Param("time") String time,
                         @Param("status") int status);
 
+    void upbicycleinf(int id);
+    List<OwnBicycle> allinfo();
     List<OwnBicycle> getOwnBicycles(String owner);
+    OwnBicycle getOwnBicycle(int id);
+    void del(int id);
+    void delcar(int id);
+    void addintoCar(@Param("name") String name,
+                    @Param("content") String content,
+                    @Param("path") String path,
+                    @Param("price") double price);
 }

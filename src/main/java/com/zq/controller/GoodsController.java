@@ -87,7 +87,6 @@ public class GoodsController {
                          @RequestParam("file")MultipartFile file) throws IOException {
 
         String filename = file.getOriginalFilename();
-
         if(!file.isEmpty()){
             String path1 = request.getSession().getServletContext().getRealPath("/");
             String path = path1.replace("\\target\\car-rental\\", "\\src\\main\\webapp\\images");

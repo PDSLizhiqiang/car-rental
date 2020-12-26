@@ -68,9 +68,13 @@
                 <input type="password" class="form-input" name="password" placeholder="密码">
                 <input type="submit" class="form-submit" value="登录">
                 <hr>
-                <div   style="text-align: center;color: #4ecdc4">
+                <div   style="text-align: left;color: #4ecdc4">
                     没有账号?<br/>
-                    <a  href="" style="color: #4ecdc4">注册一个</a>
+                    <a  href="adduser.jsp" style="color: #4ecdc4">注册一个</a>
+                </div>
+                <div   style="text-align: left;color: #4ecdc4">
+                    管理员登录<br/>
+                    <a  href="view/admin_login.jsp" style="color: #4ecdc4">登录</a>
                 </div>
             </div>
         </form>

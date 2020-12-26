@@ -1,8 +1,10 @@
 package com.zq.service;
 
+import com.zq.bean.Admin;
 import com.zq.bean.User;
 
 import javax.security.auth.login.LoginException;
+import java.util.List;
 
 /**
  * @Author: YourName
@@ -12,4 +14,5 @@ import javax.security.auth.login.LoginException;
  */
 public interface UserService {
     User login(String loginAct, String loginPwd) throws LoginException;
+
 }

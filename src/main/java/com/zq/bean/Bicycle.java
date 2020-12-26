@@ -13,7 +13,7 @@ public class Bicycle {
     private int id;
     private float price;
     private String name;
-    private String description;
+    private String content;
     private String path;
     private String status;
 
@@ -25,12 +25,12 @@ public class Bicycle {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getContent() {
+        return content;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getPath() {
@@ -69,7 +69,7 @@ public class Bicycle {
     public String toString() {
         return "Bicycle{" +
                 "id=" + id +
-                ", description='" + description + '\'' +
+                ", description='" + content + '\'' +
                 ", path='" + path + '\'' +
                 ", status='" + status + '\'' +
                 '}';

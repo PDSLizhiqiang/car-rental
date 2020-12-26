@@ -10,11 +10,19 @@ package com.zq.bean;/**
  *@date 2020/12/24 19:03
  */
 public class OwnBicycle {
-
+    private int id;
     private String path;
     private String owner;
     private String time;
     private int status;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPath() {
         return path;

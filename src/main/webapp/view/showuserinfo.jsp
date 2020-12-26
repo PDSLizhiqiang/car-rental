@@ -17,8 +17,8 @@
     </style>
 </head>
 <body>
-   <%-- <div class="div_main">
-        &lt;%&ndash;@elvariable id="user" type="com.zq.bean.User"&ndash;%&gt;
+   <<div class="div_main">
+        <%--@elvariable id="user" type="com.zq.bean.User"--%>
         <form:form modelAttribute="user" method="post" action="xiugai" >
             <table>
                 <tr>
@@ -51,6 +51,6 @@
 
         </form:form>
 
-    </div>--%>
+    </div>
 </body>
 </html>

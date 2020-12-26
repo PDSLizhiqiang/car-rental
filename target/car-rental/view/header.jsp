@@ -43,7 +43,7 @@
 
         <c:if test="${sessionScope.users!=null}">
             <a class="youbian" href="${pageContext.request.contextPath}/view/home.jsp">回到前台</a>
-            <a class="youbian" href="">退出</a>
+            <a class="youbian" href="${pageContext.request.contextPath}/login.jsp">退出</a>
         </c:if>
     </div>
 </div>

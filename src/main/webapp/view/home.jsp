@@ -91,7 +91,7 @@
             <c:if test="${sessionScope.users!=null}">
                 <a class="youbian" style="color: white">欢迎您：${sessionScope.users.name }</a>
                 <a class="youbian" href="${pageContext.request.contextPath}/view/person.jsp">个人中心</a>
-                <a class="youbian" href="logout">注销</a>
+                <a class="youbian" href="${pageContext.request.contextPath}/login.jsp">注销</a>
             </c:if>
         </div>
     </div>

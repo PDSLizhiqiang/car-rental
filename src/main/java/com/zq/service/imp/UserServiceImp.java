@@ -5,6 +5,7 @@ package com.zq.service.imp;/**
  * @Version: 1.0
  */
 
+import com.zq.bean.Admin;
 import com.zq.bean.User;
 import com.zq.dao.UserDao;
 import com.zq.service.UserService;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import javax.security.auth.login.LoginException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,6 +43,8 @@ public class UserServiceImp implements UserService {
 
         return user;
     }
+
+
 
 
 }

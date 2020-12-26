@@ -8,8 +8,13 @@
         select * from dingdan where username=#{username}
     </select>
 
-    <delete id="deleteDingdan">
+    <select id="getAll" resultType="com.zq.bean.Dingdan">
+        select * from  dingdan
+    </select>
 
+    <delete id="deleteDingdan">
         delete  from dingdan where id=#{id}
     </delete>
+
+
 </mapper>

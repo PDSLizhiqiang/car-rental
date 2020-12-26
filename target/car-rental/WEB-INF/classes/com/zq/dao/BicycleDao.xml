@@ -11,17 +11,43 @@
         select * from goodli where id = #{id};
     </select>
 
+    <insert id="addintoCar" >
+        insert into goodli (name,content,path,price)
+        values (#{name},#{content},#{path},#{price});
+    </insert>
+
     <insert id="addBicycleIntoCar">
         insert into t_bicyclecar (name,path,date,price)
         values (#{name},#{path},#{date},#{price});
     </insert>
 
-    <insert id="addbicycleInf">
+    <insert id="addbicycleInf" useGeneratedKeys="true">
         insert into t_addbicycleinf (owner,path,time,status)
         values (#{owner},#{path},#{time},#{status});
     </insert>
+    
+    <update id="upbicycleinf">
+        update t_addbicycleinf set status =1 where id =#{id};
+    </update>
 
     <select id="getOwnBicycles" resultType="com.zq.bean.OwnBicycle">
         select * from t_addbicycleinf where owner = #{owner};
     </select>
+    <select id="getOwnBicycle" resultType="com.zq.bean.OwnBicycle">
+        select * from t_addbicycleinf where id = #{id};
+    </select>
+
+
+    <select id="allinfo" resultType="com.zq.bean.OwnBicycle">
+        select * from t_addbicycleinf ;
+    </select>
+
+    <delete id="del" parameterType="int">
+        delete from t_addbicycleinf where id=#{id};
+    </delete>
+
+    <delete id="delcar" parameterType="int">
+        delete from goodli where id=#{id};
+    </delete>
+
 </mapper>
