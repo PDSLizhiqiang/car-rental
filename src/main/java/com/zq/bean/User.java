@@ -5,6 +5,8 @@ package com.zq.bean;/**
  * @Version: 1.0
  */
 
+import java.util.List;
+
 /**
  *@author LZQ
  *@date 2020/11/7 20:01
@@ -12,16 +14,11 @@ package com.zq.bean;/**
 public class User {
     private String name;
     private String password;
+    private String nickname;
+    private String sex;
+    private String phone;
+    private String address;
     private String lockState;
-    private String status;
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public String getLockState() {
         return lockState;
@@ -45,6 +42,40 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override

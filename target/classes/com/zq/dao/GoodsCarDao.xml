@@ -7,6 +7,7 @@
     <select id="findAllGoodsCar" resultType="com.zq.bean.GoodsCar">
         select * from t_bicyclecar where name = #{name}
     </select>
+
     <delete id="removeBicycle">
         delete from t_bicyclecar where id = #{id}
     </delete>

@@ -7,4 +7,14 @@
     <select id="getAlldingdanByUsername" resultType="com.zq.bean.Dingdan">
         select * from dingdan where username=#{username}
     </select>
+
+    <select id="getAll" resultType="com.zq.bean.Dingdan">
+        select * from  dingdan
+    </select>
+
+    <delete id="deleteDingdan">
+        delete  from dingdan where id=#{id}
+    </delete>
+
+
 </mapper>

@@ -15,8 +15,7 @@ import com.zq.service.BicycleService;
 import com.zq.service.imp.BicyclesImp;
 import com.zq.utils.SqlSessionUti;
 import org.apache.ibatis.session.SqlSession;
-import org.junit.jupiter.api.Test;
-
+import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -67,6 +66,15 @@ public class TestDao {
         DingdanDao mapper = sqlSession.getMapper(DingdanDao.class);
         List<Dingdan> list = mapper.getAlldingdanByUsername("志强");
         System.out.println(list);
+    }
+
+    @Test
+    public void deleteDingdan(){
+
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+
+        mapper.getOwnBicycles("志强");
     }
 
 }

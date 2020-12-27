@@ -1,11 +1,9 @@
 package com.zq.service;
 
+import com.zq.bean.Admin;
 import com.zq.bean.User;
-import org.apache.ibatis.annotations.Param;
 
 import javax.security.auth.login.LoginException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,11 +14,5 @@ import java.util.List;
  */
 public interface UserService {
     User login(String loginAct, String loginPwd) throws LoginException;
-    User find(String name);
-    User updataPasswd(String UserName, String NewPassword);
-    User updataStatus(String UserName,String Status);
-    User updataLockState( String UserName,String NewlockState);
-    ArrayList<User> showAll();
-    void deleteUser(String name);
-    User addUser();
+
 }

@@ -1,10 +1,12 @@
 package com.zq.dao;
 
 import com.zq.bean.Bicycle;
+import com.zq.bean.OwnBicycle;
 import org.apache.ibatis.annotations.Param;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author: YourName
@@ -18,6 +20,24 @@ public interface BicycleDao {
 
     Bicycle getBicycleById(int id);
 
-    void addBicycleIntoCar(@Param("name") String name, @Param("path") String path, @Param("date") String date,@Param("price") double price);
+    void addBicycleIntoCar(@Param("name") String name,
+                           @Param("path") String path,
+                           @Param("date") String date,
+                           @Param("price") double price);
 
+    void  addbicycleInf(@Param("owner") String owner,
+                        @Param("path") String path,
+                        @Param("time") String time,
+                        @Param("status") int status);
+
+    void upbicycleinf(int id);
+    List<OwnBicycle> allinfo();
+    List<OwnBicycle> getOwnBicycles(String owner);
+    OwnBicycle getOwnBicycle(int id);
+    void del(int id);
+    void delcar(int id);
+    void addintoCar(@Param("name") String name,
+                    @Param("content") String content,
+                    @Param("path") String path,
+                    @Param("price") double price);
 }

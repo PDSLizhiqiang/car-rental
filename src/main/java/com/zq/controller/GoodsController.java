@@ -6,20 +6,25 @@ package com.zq.controller;/**
  */
 
 import com.zq.bean.Bicycle;
+import com.zq.bean.OwnBicycle;
+import com.zq.bean.User;
 import com.zq.service.imp.BicyclesImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- *@author LZQ HYN
+ *@author LZQ
  *@date 2020/12/6 20:00
  */
 @Controller
@@ -32,11 +37,13 @@ public class GoodsController {
 
     @RequestMapping("/getBicycleById")
     public String getGoods(int id,HttpServletRequest request, Model model){
-        Bicycle bicycle= bicycleService.getBicycleById(id);
-        request.getSession().setAttribute("bicycle",bicycle);
-        return "/view/dianche.jsp";
-        //return "/view/goodsdetails.jsp";
 
+
+        Bicycle bicycle= bicycleService.getBicycleById(id);
+
+        request.getSession().setAttribute("bicycle",bicycle);
+
+        return "/view/goodsdetails.jsp";
     }
 
     @RequestMapping("/rentBicycle")
@@ -66,15 +73,55 @@ public class GoodsController {
 
     }
 
-    //展示所有商品
-    //将得到的集合放入request中
-    @RequestMapping("/allGoods")
-    public String allGoods(HttpServletRequest request){
-        BicyclesImp bicyclesImp = new BicyclesImp();
-        List<Bicycle> allbicycles= bicyclesImp.getAllbicycles();
-        request.getSession().setAttribute("allbicycles",allbicycles);
-        return "";
+    @RequestMapping("/addCar")
+    public String addCar(Model model){
+
+        model.addAttribute("path","addCar");
+
+
+        return "/view/person.jsp";
     }
 
+    @RequestMapping("/addInf")
+    public String addInf(HttpServletRequest request,
+                         @RequestParam("file")MultipartFile file) throws IOException {
+
+        String filename = file.getOriginalFilename();
+        if(!file.isEmpty()){
+            String path1 = request.getSession().getServletContext().getRealPath("/");
+            String path = path1.replace("\\target\\car-rental\\", "\\src\\main\\webapp\\images");
+            File filepath =new File(path,filename);
+            if(!filepath.getParentFile().exists()){
+                filepath.getParentFile().mkdirs();
+            }
+
+            file.transferTo(new File(path+File.separator+filename));
+
+            System.out.println("上传路径"+(path+File.separator+filename));
+
+        }
+
+        User users = (User)request.getSession().getAttribute("users");
+        bicycleService.addbicycleInf(users.getName(),filename);
+        return "/view/person.jsp";
+    }
+
+    @RequestMapping("/showOwnerCar")
+    public String showOwnerCar(HttpServletRequest request,Model model){
+        
+        User users = (User)request.getSession().getAttribute("users");
+
+        System.out.println("users------"+users);
+
+        model.addAttribute("path","showOwnerCar");
+
+        List<OwnBicycle> ownBicycles = bicycleService.getOwnBicycles(users.getName());
+        System.out.println(ownBicycles);
+        model.addAttribute("ownBicycles",ownBicycles);
+
+
+        return "/view/person.jsp";
+
+    }
 
 }

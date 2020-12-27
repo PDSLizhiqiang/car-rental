@@ -5,7 +5,7 @@
   Time: 17:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  isELIgnored="false"%>
 <html>
 <head>
     <title>Title</title>
@@ -23,7 +23,7 @@
             font-size: 20px;
         }
         .div_main{
-            margin-left: 300px;
+            margin-left: 20%;
             background-color: #4ecdc4;
         }
         .div_tu{
@@ -33,17 +33,17 @@
         }
         .div_l2{
             font-size: 20px;
-            width: 250px;
+            width: 20%;
             float: left;
             height: 250px;
             font-size: 20px;
             background-color: white;
         }
         .div_main2{
-            margin-left: 300px;
+            margin-left: 20%;
         }
         .div_l3{
-            width: 500px;
+            width: 20%;
             float: left;
             height: 250px;
             font-size: 20px;
@@ -84,7 +84,7 @@
                 <img src="${pageContext.request.contextPath}/images/${carxiang.path}" style="width: 250px;height: 250px"/>
             </div>
             <div class="div_l3" >
-              <a href="${pageContext.request.contextPath}/removeBicycle?id=${carxiang.id}"> <button>移除购物车</button></a>
+              <a href="${pageContext.request.contextPath}/removeBicycle?id=${carxiang.id}"> <button>移除购物车</button></a><br>
               <a href="${pageContext.request.contextPath}/rentBicyclefromCar?username=${users.name}&price=${carxiang.price}&id=${carxiang.id}">  <button>租用</button></a>
             </div>
         </c:forEach>

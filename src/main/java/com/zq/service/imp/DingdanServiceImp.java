@@ -31,4 +31,18 @@ public class DingdanServiceImp implements DingdanService {
         List<Dingdan> dingdanlist = mapper.getAlldingdanByUsername(username);
         return dingdanlist;
     }
+
+    @Override
+    public void deleteDingdan(int id) {
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        DingdanDao mapper = sqlSession.getMapper(DingdanDao.class);
+        mapper.deleteDingdan(id);
+    }
+    @Override
+    public List<Dingdan> getAll(){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        DingdanDao mapper = sqlSession.getMapper(DingdanDao.class);
+       List<Dingdan> all= mapper.getAll();
+        return all;
+    }
 }

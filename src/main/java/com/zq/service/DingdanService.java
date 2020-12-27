@@ -12,4 +12,6 @@ import java.util.List;
  */
 public interface DingdanService {
     List<Dingdan> getAlldingdanByUsername(String username);
+    List<Dingdan> getAll();
+    void deleteDingdan(int id);
 }

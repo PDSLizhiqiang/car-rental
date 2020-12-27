@@ -26,7 +26,6 @@
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.9" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
-          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.3" />
@@ -34,6 +33,8 @@
           <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1.3-b06" />
           <element id="library" level="project" name="Maven: org.glassfish:javax.servlet:3.0-b70" />
           <element id="library" level="project" name="Maven: javax.el:el-api:2.1.2-b05" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

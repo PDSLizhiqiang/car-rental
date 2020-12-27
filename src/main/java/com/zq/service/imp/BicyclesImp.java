@@ -6,6 +6,7 @@ package com.zq.service.imp;/**
  */
 
 import com.zq.bean.Bicycle;
+import com.zq.bean.OwnBicycle;
 import com.zq.bean.User;
 import com.zq.dao.BicycleDao;
 import com.zq.dao.RentBicycle;
@@ -62,6 +63,73 @@ public class BicyclesImp implements BicycleService {
 
         String dingdan = GetNumber.genRandomNum();
         mapper.rentBicycle(dingdan,username, price,df.format(new Date()));
+    }
+
+    @Override
+    public void addbicycleInf(String owner, String path) {
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String time = df.format(new Date());
+
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+
+
+        mapper.addbicycleInf(owner,path,time,0);
+
+
+    }
+
+    @Override
+    public List<OwnBicycle> getOwnBicycles(String name) {
+
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+
+        List<OwnBicycle> ownBicycles = mapper.getOwnBicycles(name);
+
+        return ownBicycles;
+    }
+    @Override
+    public void upbicycleinf( int id){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        mapper.upbicycleinf(id);
+    }
+
+    @Override
+    public  List<OwnBicycle> Allinfo(){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        List<OwnBicycle> allinfo =mapper.allinfo();
+        return allinfo;
+    }
+    @Override
+    public  void del(int id){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        mapper.del(id);
+    }
+    //从商品库中删除
+    @Override
+    public void  delcar(int id){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        mapper.delcar(id);
+    }
+
+    @Override
+    public void addintoCar(String name,String content,String path,double price){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        mapper.addintoCar(name,content,path,price);
+    }
+    @Override
+    public OwnBicycle getOwnBicycle(int id){
+        SqlSession sqlSession = SqlSessionUti.getSqlSession();
+        BicycleDao mapper = sqlSession.getMapper(BicycleDao.class);
+        OwnBicycle ownBicycle= mapper.getOwnBicycle(id);
+        return  ownBicycle;
     }
 
 }
