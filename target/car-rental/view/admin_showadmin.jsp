@@ -28,8 +28,6 @@
 <div class="div_main">
     <div class="div_li">管理员名称</div>
     <div class="div_li">管理员密码</div>
-
-
 </div>
 
 

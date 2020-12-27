@@ -16,5 +16,7 @@ public interface UserDao {
     User insertUser(User user);
     User selectUser(String name);
     User login(@Param("name") String userName, @Param("password") String passWord);
+    void adduser(@Param("name") String name,@Param("password") String password,
+                 @Param("lockState") String lockState, @Param("phone") String phone,@Param("address") String address);
 
 }

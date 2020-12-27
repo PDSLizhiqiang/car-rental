@@ -1,23 +1,19 @@
 package com.zq.controller;
 
 import com.zq.bean.*;
-import com.zq.service.AdminService;
-import com.zq.service.UserService;
 import com.zq.service.imp.AdminServiceImp;
 import com.zq.service.imp.BicyclesImp;
 import com.zq.service.imp.DingdanServiceImp;
 import com.zq.service.imp.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,6 +30,9 @@ public class AdminController {
     private BicyclesImp bicyclesImp;
     @Autowired
     private UserServiceImp userServiceImp;
+    @Autowired
+    @Qualifier("userValidator")
+    private UserValidator userValidator;
 
 
 
@@ -208,5 +207,32 @@ public class AdminController {
         String password= request.getParameter("newpasswd");
         adminServiceImp.updataPasswd(name,password);
         return "redirect:/login.jsp";
+    }
+
+    //注册用户
+    @RequestMapping("/Aadduser")
+    public String Aadduser(Model model){
+        User user = new User();
+        model.addAttribute("user",user);
+        System.out.println("xxx");
+        return "/adduser.jsp";
+    }
+    @RequestMapping("/adduser")
+    public String adduser(Model mv,@ModelAttribute User user,Errors errors){
+        mv.addAttribute("user", user);
+        userValidator.validate(user,errors);
+        String name=  user.getName();
+        String passwd= user.getPassword();
+        String lockState="0";
+        String phone=user.getPhone();
+       String address= user.getAddress();
+        if (errors.hasErrors()){
+            return "/adduser.jsp";
+        }else{
+            userServiceImp.adduser(name,passwd,lockState,phone,address);
+            return "redirect:/login.jsp";
+        }
+
+
     }
 }

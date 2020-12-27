@@ -12,7 +12,10 @@
       select * from user where name = #{name}
     </select>
 
-
+    <insert id="adduser">
+          insert into user(name,password,lockState,phone,address)
+          values(#{name},#{password},#{lockState},#{phone},#{address});
+    </insert>
     <select id="login" resultType="com.zq.bean.User">
         select * from  user where name = #{name} and password = #{password};
     </select>

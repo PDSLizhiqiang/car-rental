@@ -72,11 +72,11 @@
                 <i class="fa fa-cogs"></i><span>查看我的车辆</span>
             </a>
         </li>
-            <li class="li">
-                <a href="">
-                    <i class="fa fa-cogs"></i><span>修改密码</span>
-                </a>
-            </li>
+            <%--<li class="li">--%>
+                <%--<a href="">--%>
+                    <%--<i class="fa fa-cogs"></i><span>修改密码</span>--%>
+                <%--</a>--%>
+            <%--</li>--%>
     </ul>
 </div>
 </body>

@@ -43,7 +43,15 @@ public class UserServiceImp implements UserService {
 
         return user;
     }
+@Override
+    public void adduser(String name,String password,
+                        String lockState,
+                        String phone, String address){
+    UserDao userDaoSq = SqlSessionUti.getSqlSession().getMapper(UserDao.class);
 
+   userDaoSq.adduser(name,password,lockState,phone,address);
+
+}
 
 
 

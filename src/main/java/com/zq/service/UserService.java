@@ -2,6 +2,7 @@ package com.zq.service;
 
 import com.zq.bean.Admin;
 import com.zq.bean.User;
+import org.apache.ibatis.annotations.Param;
 
 import javax.security.auth.login.LoginException;
 import java.util.List;
@@ -14,5 +15,7 @@ import java.util.List;
  */
 public interface UserService {
     User login(String loginAct, String loginPwd) throws LoginException;
-
+    void adduser( String name,String password,
+                 String lockState,
+                  String phone, String address);
 }
